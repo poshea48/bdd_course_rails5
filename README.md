@@ -1,3 +1,5 @@
+This is the repo of the BDD course with Rails 5 - Alpha blog
+
 # README
 
 This README would normally document whatever steps are necessary to get the
