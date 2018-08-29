@@ -10,12 +10,21 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <div class="text-center alert alert-<%= name %>">
-        <%= msg %>
+    <header role="banner">
+      <%= render 'layouts/navigation' %>
+    </header>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <% flash.each do |name, msg| %>
+            <div class="text-center alert alert-<%= name %>">
+              <%= msg %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
       </div>
-      
-    <% end %>
-    <%= yield %>
+    </div>
   </body>
 </html>
