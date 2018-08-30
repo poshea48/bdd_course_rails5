@@ -92,3 +92,17 @@ body {
 .edit-delete {
   margin-top: 20px;
 }
+
+// Sign up -- Sign in 
+.sign-link a {
+  color: #64103F;
+}
+
+// Devis Error Messages
+#error_explanation {
+  background-color: #f2dede;
+  color: #a94442;
+  text-align: left;
+  padding: 5px 20px;
+  margin-bottom: 30px;
+}

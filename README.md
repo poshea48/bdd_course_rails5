@@ -1,10 +1,10 @@
-Listing articles feature test
+Show article feature test
 - create branch
-- create 2 articles to display
+- create 1 article to display
 - 
-- list the 2 articles 
+- show the article title and details
 - 
-- expect both articles to show title and body
+- expect article to show title and body
 
 This is the repo of the BDD course with Rails 5 - Alpha blog
 
