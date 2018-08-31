@@ -1,34 +1,38 @@
-Show article feature test
-- create branch
-- create 1 article to display
-- 
-- show the article title and details
-- 
-- expect article to show title and body
+User sign-up
+ 
+ - topic branch
+ - create spec
+ 
+Signing up users
+    - visit root 
+    - click signup link 
+    - fill in email, password, password confirm
+    - click sign-up button
+    - redirect to root_path
 
-This is the repo of the BDD course with Rails 5 - Alpha blog
+Invalid signup 
+    - visit root 
+    - click signup link 
+    - fill in invaild 
+    - click sign-up button
+    - error messages
+    - redirects sign up page 
+    
+User sign-in
 
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - topic branch
+  - create spec 
+ 
+   Sign in user
+    - visit root 
+    - click sign in link 
+    - fill in valid credentials
+    - flash message 
+    - redirect to root 
+    
+    Invalid sign in 
+     - visit root 
+     - click sign in link 
+     - fill in invalid credentials
+     - error message 
+     - 
