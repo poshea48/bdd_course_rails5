@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.feature "Listing Articles" do 
   before do 
     @user = User.create(email: 'user@example.com', password: 'password')
-    login_as(@user)
     @article1 = Article.create({ title: "Article 1",
                                  body: "Article 1 body",
                                  user: @user
@@ -14,7 +13,7 @@ RSpec.feature "Listing Articles" do
                                })
   end 
   
-  scenario "A user lists all articles" do 
+  scenario "with articles created and user not signed in" do 
     visit "/"
     
     expect(page).to have_content(@article1.title) 
@@ -23,6 +22,20 @@ RSpec.feature "Listing Articles" do
     expect(page).to have_content(@article2.body)
     expect(page).to have_link(@article1.title)
     expect(page).to have_link(@article2.title)
+    expect(page).not_to have_link("New Article")
+  end
+  
+  scenario "with articles created and user signed in" do 
+    login_as(@user)
+    visit "/"
+    
+    expect(page).to have_content(@article1.title) 
+    expect(page).to have_content(@article1.body)
+    expect(page).to have_content(@article2.title)
+    expect(page).to have_content(@article2.body)
+    expect(page).to have_link(@article1.title)
+    expect(page).to have_link(@article2.title)
+    expect(page).to have_link("New Article")
   end
   
   scenario "A user has no articles" do 
