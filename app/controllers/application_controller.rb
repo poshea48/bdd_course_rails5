@@ -9,4 +9,5 @@ class ApplicationController < ActionController::Base
     flash[:danger] = "That path does not exist"
     redirect_to root_path 
   end
+  
 end
