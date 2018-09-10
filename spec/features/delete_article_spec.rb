@@ -4,10 +4,8 @@ RSpec.feature "Deleting an Article" do
   before do
     @user = User.create(email: 'user@example.com', password: 'password')
     login_as(@user)
-    @article = Article.create(title: "Title One", body: "Body of article one")
-    @article.user = current_user
-    
-  end
+    @article = Article.create(title: "Title One", body: "Body of article one", user: @user)
+  end 
   
   scenario "A user deletes article" do 
     visit "/"

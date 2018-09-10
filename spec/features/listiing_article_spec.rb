@@ -2,11 +2,15 @@ require 'rails_helper'
 
 RSpec.feature "Listing Articles" do 
   before do 
+    @user = User.create(email: 'user@example.com', password: 'password')
+    login_as(@user)
     @article1 = Article.create({ title: "Article 1",
-                                 body: "Article 1 body"
+                                 body: "Article 1 body",
+                                 user: @user
                                })
     @article2 = Article.create({ title: "Article 2",
-                                 body: "Article 2 body"
+                                 body: "Article 2 body",
+                                 user: @user
                                })
   end 
   
