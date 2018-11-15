@@ -10,6 +10,8 @@ class CommentsController < ApplicationController
       @comment.user = current_user
       
       if @comment.save
+        ActionCable.server.broadcast "comments", 
+          render(partial: 'comments/comment', object: @comment)
         flash[:success] = "Your comment has been added"
       else 
         flash.now[:danger] = "Your comment was not added"
